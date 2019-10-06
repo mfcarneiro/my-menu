@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './screens/dashboard/dashboard_screen.dart';
 import './screens/category/category_meals_screen.dart';
 import './screens/meal/meal_detail_screen.dart';
+import './screens/category/category_filter_screen.dart';
 
 void main() => runApp(MainApp());
 
@@ -19,7 +20,8 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => DashboardScreen(),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
-        MealDetailScreen.routeName: (context) => MealDetailScreen()
+        MealDetailScreen.routeName: (context) => MealDetailScreen(),
+        CategoryFilterScreen.routeName: (context) => CategoryFilterScreen(),
       },
       // * Triggers when no named route is reached
       //! onGenerateRoute: (routeSettings) {

@@ -9,22 +9,44 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  final List<Map<String, Object>> _navigationBottomRoutes = [
-    {
-      'page': CategoryFilterScreen(),
-      'title': 'Info',
-    },
-    {
-      'page': CategoriesScreen(),
-      'title': 'Categories',
-    },
-    {
-      'page': FavoriteScreen(),
-      'title': 'Favorites',
-    },
-  ];
-
+  //* Declaring here in an static way, passing data through "widget"
+  //* will not work
+  //* Instead, use the initState() to handle the list initialization
+  //! final List<Map<String, Object>> _navigationBottomRoutes = [
+  //!   {
+  //!     'page': CategoryFilterScreen(),
+  //!     'title': 'Info',
+  //!   },
+  //!   {
+  //!     'page': CategoriesScreen(),
+  //!     'title': 'Categories',
+  //!   },
+  //!   {
+  //!  -->'page': FavoriteScreen(widget.favoriteList...), <--
+  //!     'title': 'Favorites',
+  //!   },
+  //! ];
+  List<Map<String, Object>> _navigationBottomRoutes = [];
   int _selectedRouteIndex = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    _navigationBottomRoutes = [
+      {
+        'page': CategoryFilterScreen(),
+        'title': 'Info',
+      },
+      {
+        'page': CategoriesScreen(),
+        'title': 'Categories',
+      },
+      {
+        'page': FavoriteScreen(),
+        'title': 'Favorites',
+      },
+    ];
+  }
 
   void _onNavigationBottomItemTapped(int index) {
     setState(() {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CategoryFilterScreen extends StatefulWidget {
+  static String routeName = '/category_filter';
+
   _CategoryFilterScreenState createState() => _CategoryFilterScreenState();
 }
 
